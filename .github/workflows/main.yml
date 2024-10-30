@@ -27,5 +27,7 @@ jobs:
       - name: Lint code with ESLint
         run: npm run lint
 
-      - name: Run test
+      - name: Run tests
+        env:
+          EXPO_USE_DEV_SERVER: "true"
         run: mpm run test
