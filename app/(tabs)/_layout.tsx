@@ -1,37 +1,63 @@
-import { Tabs } from 'expo-router';
-import React from 'react';
+import React from "react";
 
-import { TabBarIcon } from '@/components/navigation/TabBarIcon';
-import { Colors } from '@/constants/Colors';
-import { useColorScheme } from '@/hooks/useColorScheme';
+import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
+import TaskList from "../index";
+import RefundScreen from "@/app/refund";
+import CommunicationScreen from "@/app/communication";
+import FriendScreen from "@/app/friend";
+import DataScreen from "../data";
+
+const Tab = createMaterialTopTabNavigator();
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
   return (
-    <Tabs
+    <Tab.Navigator
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: false,
-      }}>
-      <Tabs.Screen
+        tabBarScrollEnabled: true,
+        tabBarLabelStyle: {
+          fontSize: 14,
+          lineHeight: 16,
+          textTransform: "none",
+          fontWeight: "bold",
+          maxWidth: 150,
+          overflow: "hidden",
+        },
+        tabBarItemStyle: { width: "auto" },
+        tabBarActiveTintColor: "green",
+        tabBarInactiveTintColor: "gray",
+        tabBarIndicatorStyle: {
+          backgroundColor: "green",
+          height: 3,
+          borderRadius: 2,
+        },
+        tabBarAllowFontScaling: false,
+      }}
+    >
+      <Tab.Screen
+        name="data"
+        component={DataScreen}
+        options={{ title: "Mis datos" }}
+      />
+      <Tab.Screen
         name="index"
-        options={{
-          title: 'Home',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'home' : 'home-outline'} color={color} />
-          ),
-        }}
+        component={TaskList}
+        options={{ title: "Mis tareas" }}
       />
-      <Tabs.Screen
-        name="explore"
-        options={{
-          title: 'Explore',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
-          ),
-        }}
+      <Tab.Screen
+        name="refund"
+        component={RefundScreen}
+        options={{ title: "Mis devoluciones" }}
       />
-    </Tabs>
+      <Tab.Screen
+        name="communication"
+        component={CommunicationScreen}
+        options={{ title: "Mis comunicaciones" }}
+      />
+      <Tab.Screen
+        name="friend"
+        component={FriendScreen}
+        options={{ title: "Mis mejores amigos" }}
+      />
+    </Tab.Navigator>
   );
 }
