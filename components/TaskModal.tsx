@@ -12,6 +12,7 @@ import { Colors } from "@/constants/Colors";
 type TaskModalProps = {
   visible: boolean;
   onClose: () => void;
+  // eslint-disable-next-line no-unused-vars
   onSave: (title: string, description: string) => void;
   initialTitle?: string;
   initialDescription?: string;
@@ -105,15 +106,15 @@ export const TaskModal: React.FC<TaskModalProps> = ({
 const styles = StyleSheet.create({
   modalOverlay: {
     flex: 1,
-    backgroundColor: "rgba(0, 0, 0, 0.5)",
+    backgroundColor: Colors.transparentBlack,
     justifyContent: "center",
     alignItems: "center",
   },
   modalContent: {
     width: "90%",
-    backgroundColor: "#fff",
+    backgroundColor: Colors.white,
     padding: 20,
-    shadowColor: "#000",
+    shadowColor: Colors.black,
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.2,
     shadowRadius: 4,
@@ -128,11 +129,11 @@ const styles = StyleSheet.create({
   modalLabel: {
     marginTop: 20,
     fontSize: 16,
-    color: "#333",
+    color: Colors.gray,
   },
   modalInput: {
     height: 40,
-    borderColor: "#ccc",
+    borderColor: Colors.subLight,
     borderWidth: 1,
     borderRadius: 5,
     marginTop: 5,
@@ -147,13 +148,13 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   cancelButton: {
-    backgroundColor: "#ccc",
+    backgroundColor: Colors.subLight,
     paddingHorizontal: 20,
     paddingVertical: 10,
     borderRadius: 5,
   },
   cancelButtonText: {
-    color: "white",
+    color: Colors.white,
     fontSize: 16,
   },
   saveButton: {
@@ -163,12 +164,12 @@ const styles = StyleSheet.create({
     borderRadius: 5,
   },
   saveButtonText: {
-    color: "white",
+    color: Colors.white,
     fontSize: 16,
     fontWeight: "bold",
   },
   errorText: {
-    color: "red",
+    color: Colors.red,
     fontSize: 14,
     marginBottom: 10,
   },

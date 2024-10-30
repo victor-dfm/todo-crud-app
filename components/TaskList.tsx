@@ -17,6 +17,7 @@ type Task = {
 
 type TaskListProps = {
   tasks: Task[];
+  // eslint-disable-next-line no-unused-vars
   onDelete: (id: number) => void;
 };
 
@@ -49,10 +50,10 @@ export const TaskList: React.FC<TaskListProps> = ({ tasks, onDelete }) => {
 const styles = StyleSheet.create({
   taskCard: {
     flexDirection: "row",
-    backgroundColor: "#fff",
+    backgroundColor: Colors.white,
     padding: 15,
     borderRadius: 10,
-    shadowColor: "#000",
+    shadowColor: Colors.black,
     alignSelf: "center",
     justifyContent: "space-between",
     marginBottom: 15,
@@ -66,7 +67,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   taskTitle: {
-    color: "#000000",
+    color: Colors.black,
     fontSize: 16,
     marginBottom: 5,
   },

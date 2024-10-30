@@ -98,19 +98,19 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    backgroundColor: "#ececec",
+    backgroundColor: Colors.subGray,
   },
   title: {
     fontSize: 24,
     fontWeight: "bold",
-    color: "333",
+    color: Colors.gray,
     marginBottom: 20,
   },
   form: {
-    backgroundColor: "#fff",
+    backgroundColor: Colors.white,
     padding: 20,
     borderRadius: 10,
-    shadowColor: "#000",
+    shadowColor: Colors.black,
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
     shadowRadius: 4,
@@ -118,20 +118,20 @@ const styles = StyleSheet.create({
   },
   label: {
     fontSize: 16,
-    color: "#333",
+    color: Colors.gray,
     marginBottom: 5,
   },
   required: {
-    color: "red",
+    color: Colors.red,
   },
   input: {
     height: 40,
-    borderColor: "#ccc",
+    borderColor: Colors.subLight,
     borderWidth: 1,
     borderRadius: 5,
     paddingHorizontal: 10,
     marginBottom: 20,
-    backgroundColor: "#fff",
+    backgroundColor: Colors.white,
   },
   button: {
     backgroundColor: Colors.main,
@@ -142,12 +142,12 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   buttonText: {
-    color: "white",
+    color: Colors.white,
     fontSize: 16,
     fontWeight: "bold",
   },
   errorText: {
-    color: "red",
+    color: Colors.red,
     fontSize: 14,
     marginBottom: 10,
   },

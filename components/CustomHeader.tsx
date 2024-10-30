@@ -1,43 +1,51 @@
 import React from "react";
-import { Text, TouchableOpacity, View } from "react-native";
+import { Text, TouchableOpacity, View, StyleSheet } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
 import { Colors } from "@/constants/Colors";
 
 export default function CustomHeader() {
   return (
-    <View
-      style={{
-        flexDirection: "row",
-        alignItems: "center",
-        paddingHorizontal: 10,
-        paddingVertical: 5,
-        backgroundColor: "#fff",
-      }}
-    >
-      <View style={{ flexDirection: "row", alignItems: "center" }}>
-        <TouchableOpacity style={{ marginRight: 15 }}>
+    <View style={styles.container}>
+      <View style={styles.leftSection}>
+        <TouchableOpacity style={styles.iconButton}>
           <Icon name="menu" size={24} color="#333" />
         </TouchableOpacity>
-        <TouchableOpacity style={{ marginRight: 15 }}>
+        <TouchableOpacity style={styles.iconButton}>
           <Icon name="search" size={24} color="#333" />
         </TouchableOpacity>
       </View>
 
-      <View style={{ flex: 1, alignItems: "center" }}>
-        <Text style={{ fontSize: 26, fontWeight: "bold", color: "#333" }}>
+      <View style={styles.centerSection}>
+        <Text style={styles.titleText}>
           Tiend
-          <Text style={{ color: Colors.subMain }}>animal</Text>
+          <Text style={styles.highlightedText}>animal</Text>
         </Text>
       </View>
 
-      <View style={{ flexDirection: "row", marginLeft: "auto" }}>
-        <TouchableOpacity style={{ marginHorizontal: 10 }}>
+      <View style={styles.rightSection}>
+        <TouchableOpacity style={styles.iconButton}>
           <Icon name="person" size={24} color="#333" />
         </TouchableOpacity>
-        <TouchableOpacity style={{ marginHorizontal: 10 }}>
+        <TouchableOpacity style={styles.iconButton}>
           <Icon name="cart" size={24} color="#333" />
         </TouchableOpacity>
       </View>
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: "row",
+    alignItems: "center",
+    paddingHorizontal: 10,
+    paddingVertical: 5,
+    backgroundColor: Colors.white,
+  },
+  leftSection: { flexDirection: "row", alignItems: "center" },
+  centerSection: { flex: 1, alignItems: "center" },
+  rightSection: { flexDirection: "row", marginLeft: "auto" },
+  iconButton: { marginHorizontal: 10 },
+  titleText: { fontSize: 26, fontWeight: "bold", color: Colors.gray },
+  highlightedText: { color: Colors.subMain },
+});

@@ -6,6 +6,7 @@ type PaginatorProps = {
   currentPage: number;
   totalItems: number;
   itemsPerPage: number;
+  // eslint-disable-next-line no-unused-vars
   onPageChange: (page: number) => void;
 };
 
@@ -70,13 +71,13 @@ const styles = StyleSheet.create({
     borderRadius: 5,
   },
   pageButtonText: {
-    color: "white",
+    color: Colors.white,
     fontWeight: "bold",
   },
   pageIndicator: {
     fontSize: 16,
   },
   disabledButton: {
-    backgroundColor: "#ccc",
+    backgroundColor: Colors.subLight,
   },
 });

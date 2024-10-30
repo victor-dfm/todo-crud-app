@@ -44,28 +44,36 @@ export default function RootLayout() {
 
 fs.rename(oldDirPath, newDirPath, (error) => {
   if (error) {
+    // eslint-disable-next-line no-console
     return console.error(`Error renaming directory: ${error}`);
   }
+  // eslint-disable-next-line no-console
   console.log("/app moved to /app-example.");
 
   fs.mkdir(newAppDirPath, { recursive: true }, (error) => {
     if (error) {
+      // eslint-disable-next-line no-console
       return console.error(`Error creating new app directory: ${error}`);
     }
+    // eslint-disable-next-line no-console
     console.log("New /app directory created.");
 
     const indexPath = path.join(newAppDirPath, "index.tsx");
     fs.writeFile(indexPath, indexContent, (error) => {
       if (error) {
+        // eslint-disable-next-line no-console
         return console.error(`Error creating index.tsx: ${error}`);
       }
+      // eslint-disable-next-line no-console
       console.log("app/index.tsx created.");
 
       const layoutPath = path.join(newAppDirPath, "_layout.tsx");
       fs.writeFile(layoutPath, layoutContent, (error) => {
         if (error) {
+          // eslint-disable-next-line no-console
           return console.error(`Error creating _layout.tsx: ${error}`);
         }
+        // eslint-disable-next-line no-console
         console.log("app/_layout.tsx created.");
       });
     });

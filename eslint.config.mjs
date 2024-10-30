@@ -11,7 +11,7 @@ export default [
   {
     files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
     languageOptions: {
-      globals: { ...globals.browser, ...globals.jest },
+      globals: { ...globals.browser, ...globals.jest, ...globals.node },
       parser: typescriptEslintParse,
     },
     plugins: {
@@ -21,7 +21,7 @@ export default [
       prettier: pluginPrettier,
     },
     rules: {
-      "no-unused-vars": "off",
+      "no-unused-vars": ["warn", { argsIgnorePattern: "^_" }],
       "no-console": "warn",
       eqeqeq: "error",
 

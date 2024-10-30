@@ -26,4 +26,11 @@ export const Colors = {
   main: "#6a9e3a",
   subMain: "green",
   subDark: "#666666",
+  white: "white",
+  subLight: "#d3d3d3",
+  black: "#000000",
+  gray: "#333333",
+  subGray: "#ececec",
+  red: "red",
+  transparentBlack: "rgba(0, 0, 0, 0.5)",
 };

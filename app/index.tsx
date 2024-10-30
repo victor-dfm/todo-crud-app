@@ -127,12 +127,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    backgroundColor: "#ececec",
+    backgroundColor: Colors.subGray,
   },
   title: {
     fontSize: 24,
     fontWeight: "bold",
-    color: "333",
+    color: Colors.gray,
     marginBottom: 20,
   },
   addButton: {
@@ -145,7 +145,7 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
   },
   addButtonText: {
-    color: "white",
+    color: Colors.white,
     fontSize: 18,
     fontWeight: "bold",
   },
