@@ -1,8 +1,15 @@
-# Welcome to your Expo app 👋
+# TODO CRUD APP
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+This project is a task management application developed in React Native with [Expo](https://expo.dev), which allows adding, listing, and deleting tasks.
+This repository includes a CI/CD pipeline configured with GitHub Actions to verify code quality using ESLint and runt test
+automatically on every `push` ir `pull request` to the main branch.
+
+The reason for using expo is because it already includes  iOS navigation and simulation system (apart from android and web) in order to be able to move forward with the test. 
 
 ## Get started
+
+This project has been done with node v20.17.0 and npm 10.8.2. Make sure you have these versions. The just clone the repository and perform the following commands.
+
 
 1. Install dependencies
 
@@ -16,35 +23,19 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
     npx expo start
    ```
 
-In the output, you'll find options to open the app in a
+3. Open iOS simulator - press i
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## More things
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+The application is structured in different views with navigation, where `My Task` is the main view,
+where you can add and delete tasks, with a pagination that shows by default 10 task per page. Apart from
+this there is also the `My data` view where you can add basic user information. In all forms there is an error system
+to help the user to fill in the necessary things.
 
-## Get a fresh project
+In the code the Single Responsibility Principle is respected, being everything divided into
+different components to be able to handle better and locate possible errors quickly.
 
-When you're ready, run:
+In addition, a pipeline system with GitHub Actions has been added, so that the rules applied to the project can be
+checked with ESlint and a basic test can be carried out.
 
-```bash
-npm run reset-project
-```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
